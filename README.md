@@ -21,6 +21,22 @@ Les skills sont ensuite disponibles sous le préfixe du plugin, par exemple `fgy
 | --- | --- |
 | [`clion-pico-setup`](plugins/fgy-embedded/skills/clion-pico-setup/SKILL.md) | Crée un projet C pour Raspberry Pi Pico / Pico W (RP2040), prêt pour CLion et le débogage SWD avec une Raspberry Pi Debug Probe |
 
+#### Exemple : `clion-pico-setup`
+
+Le skill se déclenche à partir d'une demande en langage naturel :
+
+```
+Crée un projet Pico W nommé test_blink dans ~/dev/sandbox, avec printf sur USB.
+```
+
+Ou explicitement :
+
+```
+/fgy-embedded:clion-pico-setup Pico nommé sensor_logger dans ~/dev/projects, stdio sur UART
+```
+
+Paramètres reconnus : nom du projet (identifiant C), dossier parent (doit exister), carte (`pico` ou `pico_w`, défaut `pico_w`), stdio (`usb`, `uart` ou `none`, défaut `usb`). Les paramètres manquants sont demandés. Le skill vérifie les prérequis, génère le projet (dont `README.md` et `README.fr.md`), le compile, puis donne les étapes CLion restantes.
+
 ## Développement
 
 Structure :
