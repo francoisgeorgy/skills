@@ -1,0 +1,53 @@
+{
+  "version": 6,
+  "cmakeMinimumRequired": {
+    "major": 4,
+    "minor": 1,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "pico-base",
+      "hidden": true,
+      "generator": "Ninja",
+      "cacheVariables": {
+        "PICO_SDK_PATH": "$env{PICO_SDK_PATH}"
+      },
+      "vendor": {
+        "jetbrains.com/clion": {
+          "toolchain": "Pico ARM"
+        }
+      }
+    },
+    {
+      "name": "debug-pico",
+      "displayName": "debug-pico",
+      "inherits": "pico-base",
+      "binaryDir": "${sourceDir}/build/pico",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "PICO_BOARD": "pico"
+      }
+    },
+    {
+      "name": "debug-pico-w",
+      "displayName": "debug-pico-w",
+      "inherits": "pico-base",
+      "binaryDir": "${sourceDir}/build/pico_w",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "PICO_BOARD": "pico_w"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "debug-pico",
+      "configurePreset": "debug-pico"
+    },
+    {
+      "name": "debug-pico-w",
+      "configurePreset": "debug-pico-w"
+    }
+  ]
+}

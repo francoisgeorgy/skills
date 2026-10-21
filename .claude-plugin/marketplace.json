@@ -1,0 +1,16 @@
+{
+  "name": "francoisgeorgy-skills",
+  "owner": {
+    "name": "François Georgy"
+  },
+  "description": "Skills Claude Code de François Georgy.",
+  "plugins": [
+    {
+      "name": "fgy-embedded",
+      "source": "./plugins/fgy-embedded",
+      "description": "Skills pour le développement embarqué (Raspberry Pi Pico, CLion, OpenOCD).",
+      "category": "development",
+      "keywords": ["embedded", "pico", "rp2040", "clion", "openocd"]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+.idea/
+*.iml
+build/
+cmake-build-*/
+CMakeUserPresets.json
+tmp/
+logs/
+*.log
+*.tmp
+.DS_Store
