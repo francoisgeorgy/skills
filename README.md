@@ -26,7 +26,7 @@ Les skills sont ensuite disponibles sous le préfixe du plugin, par exemple `fgy
 Le skill se déclenche à partir d'une demande en langage naturel :
 
 ```
-Crée un projet Pico W nommé test_blink dans ~/dev/sandbox, avec printf sur USB.
+Créer un projet Pico W nommé test_blink dans ~/dev/sandbox, avec printf sur USB.
 ```
 
 Ou explicitement :
