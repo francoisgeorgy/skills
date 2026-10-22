@@ -1,0 +1,10 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="@PROJECT@ SWD" type="com.jetbrains.cidr.embedded.openocd.conf.type" factoryName="com.jetbrains.cidr.embedded.openocd.conf.factory" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="@PROJECT@" TARGET_NAME="@PROJECT@" CONFIG_NAME="@PRESET@" version="1" RUN_TARGET_PROJECT_NAME="@PROJECT@" RUN_TARGET_NAME="@PROJECT@">
+    <openocd version="1" gdb-port="3333" telnet-port="4444" board-config="$PROJECT_DIR$/openocd-rp2350-cmsis-dap.cfg" reset-type="INIT" download-type="UPDATED_ONLY">
+      <debugger kind="GDB">@GDB@</debugger>
+    </openocd>
+    <method v="2">
+      <option name="CLION.COMPOUND.BUILD" enabled="true" />
+    </method>
+  </configuration>
+</component>

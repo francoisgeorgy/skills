@@ -10,7 +10,7 @@
       "source": "./plugins/fgy-embedded",
       "description": "Skills pour le développement embarqué (Raspberry Pi Pico, CLion, OpenOCD).",
       "category": "development",
-      "keywords": ["embedded", "pico", "rp2040", "clion", "openocd"]
+      "keywords": ["embedded", "pico", "rp2040", "rp2350", "clion", "openocd"]
     }
   ]
 }

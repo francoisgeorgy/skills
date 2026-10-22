@@ -7,7 +7,7 @@ description: Create a new C project for Raspberry Pi Pico / Pico W (RP2040) usin
 
 Scaffolds a Pico SDK project from a tested template, builds it once from the CLI to prove the toolchain works, then walks the user through the CLion steps that cannot be stored in the project.
 
-Scope: RP2040 boards `pico` and `pico_w` only. For Pico 2 (RP2350), say it is not supported by this skill: it needs a different OpenOCD target and CPU settings.
+Scope: RP2040 boards `pico` and `pico_w` only. For Pico 2 / Pico 2 W (RP2350), use the `clion-pico2-setup` skill instead.
 
 ## 1. Gather parameters
 

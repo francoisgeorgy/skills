@@ -1,0 +1,54 @@
+{
+  "version": 6,
+  "cmakeMinimumRequired": {
+    "major": 4,
+    "minor": 1,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "pico2-base",
+      "hidden": true,
+      "generator": "Ninja",
+      "cacheVariables": {
+        "PICO_SDK_PATH": "$env{PICO_SDK_PATH}",
+        "PICO_PLATFORM": "rp2350-arm-s"
+      },
+      "vendor": {
+        "jetbrains.com/clion": {
+          "toolchain": "Pico ARM"
+        }
+      }
+    },
+    {
+      "name": "debug-pico2",
+      "displayName": "debug-pico2",
+      "inherits": "pico2-base",
+      "binaryDir": "${sourceDir}/build/pico2",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "PICO_BOARD": "pico2"
+      }
+    },
+    {
+      "name": "debug-pico2-w",
+      "displayName": "debug-pico2-w",
+      "inherits": "pico2-base",
+      "binaryDir": "${sourceDir}/build/pico2_w",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "PICO_BOARD": "pico2_w"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "debug-pico2",
+      "configurePreset": "debug-pico2"
+    },
+    {
+      "name": "debug-pico2-w",
+      "configurePreset": "debug-pico2-w"
+    }
+  ]
+}
