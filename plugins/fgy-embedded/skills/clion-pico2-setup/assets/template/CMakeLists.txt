@@ -6,9 +6,9 @@ set(CMAKE_CXX_STANDARD 17)
 # ----------------------------------------------------------------------------
 # Compiler
 # ----------------------------------------------------------------------------
-# CLI builds: if CMake doesn't know which compiler to use yet, include the
-# helper that selects arm-none-eabi-*. From CLion with the "Pico ARM"
-# toolchain, CMAKE_C_COMPILER is already set and this block is skipped.
+# If no compiler was passed to CMake (CLI builds, or CLion with the "Pico ARM"
+# toolchain compilers left as detected), include the helper that selects
+# arm-none-eabi-*. A compiler passed explicitly skips this block.
 if(NOT DEFINED CMAKE_C_COMPILER)
     include(pico_compilers.cmake)
 endif()

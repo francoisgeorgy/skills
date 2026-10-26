@@ -14,7 +14,7 @@ French version: [README.fr.md](README.fr.md).
 | --- | --- |
 | `src/main.c` | Program: LED blink + `printf` |
 | `CMakeLists.txt` | Resolves `PICO_SDK_PATH`, sets the board (default `@BOARD@`) and the `rp2350-arm-s` platform, imports the SDK, defines the `@PROJECT@` target and stdio |
-| `pico_compilers.cmake` | Selects `arm-none-eabi-*` for command-line builds; skipped when CLion provides the compiler |
+| `pico_compilers.cmake` | Selects `arm-none-eabi-*` when no compiler is passed to CMake; skipped when CLion's toolchain sets one explicitly |
 | `CMakePresets.json` | `debug-pico2` / `debug-pico2-w` presets: Ninja, Debug, `rp2350-arm-s` platform, `build/<board>` directory, CLion toolchain `Pico ARM` |
 | `openocd-rp2350-cmsis-dap.cfg` | OpenOCD: CMSIS-DAP probe + RP2350 target (`target/rp2350.cfg`), SWD at 5000 kHz |
 | `.run/@PROJECT@ SWD.run.xml` | CLion *OpenOCD Download & Run* configuration (flash + debug) |

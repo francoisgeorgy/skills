@@ -12,11 +12,13 @@ Settings > Build, Execution, Deployment > Toolchains > `+` > System. Name it exa
 | --- | --- |
 | CMake | Bundled, or installed version >= 4.1 |
 | Build tool | Ninja (bundled is fine) |
-| C compiler | Absolute path to `arm-none-eabi-gcc` (e.g. `/opt/homebrew/bin/arm-none-eabi-gcc`) |
-| C++ compiler | Absolute path to `arm-none-eabi-g++` |
+| C compiler | Leave as detected, or the absolute path to `arm-none-eabi-gcc` (e.g. `/opt/homebrew/bin/arm-none-eabi-gcc`) |
+| C++ compiler | Leave as detected, or the absolute path to `arm-none-eabi-g++` |
 | Debugger | Leave as is: the toolchain Debugger field is deprecated since 2026.2; the run configuration selects GDB itself |
 
-Use explicit paths. Auto-detection picks Apple's `cc`/`c++`, which cannot build the firmware.
+The `cc` / `c++` that CLion shows as detected is not used for the build. With the compiler fields left as detected, CLion passes no compiler to CMake: the project's `pico_compilers.cmake` and the Pico SDK toolchain file select `arm-none-eabi-gcc` / `arm-none-eabi-g++`. Explicit paths are optional; if set, they must point to `arm-none-eabi-*`, because a compiler passed by CLion takes precedence over both.
+
+In every case the SDK searches `arm-none-eabi-gcc`, `-g++`, `-objcopy` and `-objdump` in the PATH CLion sees (or in `PICO_TOOLCHAIN_PATH`). If CMake stops with `Compiler 'arm-none-eabi-gcc' not found`, CLion does not see `/opt/homebrew/bin`: launch it from a terminal, or set `PICO_TOOLCHAIN_PATH` to the toolchain prefix (the directory that contains `bin/`) in a `CMakeUserPresets.json` (see below).
 
 ### OpenOCD executable
 

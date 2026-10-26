@@ -7,7 +7,7 @@
 | `PICO_PLATFORM` is `rp2040` or `rp2350-riscv` | A `PICO_PLATFORM` environment variable or a stale cache overrides the project: unset it, delete `build/<board>`, reconfigure |
 | Build directory switched between RP2040 and RP2350 boards | Platform and compiler are fixed at first configure: delete `build/<board>` (or `cmake-build-*`) and reconfigure |
 | Missing TinyUSB / cyw43 / lwIP headers | SDK submodules: `git -C "$PICO_SDK_PATH" submodule update --init --recursive` |
-| Host Clang used, or wrong architecture | CLion profile not on the `Pico ARM` toolchain, or toolchain uses `cc`. Fix, then Tools > CMake > Reset Cache and Reload Project. `pico_compilers.cmake` is skipped when a compiler is already set |
+| Host Clang used, or wrong architecture | CLion profile not on the `Pico ARM` toolchain, or toolchain compiler fields set explicitly to `cc` (leave them as detected or point them to `arm-none-eabi-*`). Fix, then Tools > CMake > Reset Cache and Reload Project. `pico_compilers.cmake` is skipped when a compiler is passed explicitly |
 | `_exit` / `_sbrk` undefined during compiler checks | Cross-compiler not set before `project()`; for CLI builds, pass `-DARM_GCC_PATH=<toolchain prefix containing bin/>` |
 | `CMake Error: generator Ninja does not match` | Build directory created by another generator: delete `build/<board>` |
 | picotool download or build fails during configure | picotool missing and no network: `brew install picotool`. The `.elf` alone is enough for SWD |

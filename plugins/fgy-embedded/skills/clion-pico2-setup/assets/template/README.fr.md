@@ -14,7 +14,7 @@ English version: [README.md](README.md).
 | --- | --- |
 | `src/main.c` | Programme : clignotement de la LED + `printf` |
 | `CMakeLists.txt` | Résout `PICO_SDK_PATH`, fixe la carte (défaut `@BOARD@`) et la plateforme `rp2350-arm-s`, importe le SDK, définit la cible `@PROJECT@` et le stdio |
-| `pico_compilers.cmake` | Sélectionne `arm-none-eabi-*` pour les builds en ligne de commande ; ignoré quand CLion fournit le compilateur |
+| `pico_compilers.cmake` | Sélectionne `arm-none-eabi-*` quand aucun compilateur n'est passé à CMake ; ignoré quand la toolchain CLion en fixe un explicitement |
 | `CMakePresets.json` | Presets `debug-pico2` / `debug-pico2-w` : Ninja, Debug, plateforme `rp2350-arm-s`, dossier `build/<carte>`, toolchain CLion `Pico ARM` |
 | `openocd-rp2350-cmsis-dap.cfg` | OpenOCD : sonde CMSIS-DAP + cible RP2350 (`target/rp2350.cfg`), SWD à 5000 kHz |
 | `.run/@PROJECT@ SWD.run.xml` | Configuration CLion *OpenOCD Download & Run* (flash + debug) |

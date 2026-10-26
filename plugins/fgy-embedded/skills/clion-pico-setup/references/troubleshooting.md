@@ -4,7 +4,7 @@
 | --- | --- |
 | `PICO_SDK_PATH is not set` / `Invalid PICO_SDK_PATH` | Export it, or pass `-DPICO_SDK_PATH=...`; in CLion see `clion.md` (CMakeUserPresets.json). Path must be the SDK root containing `external/pico_sdk_import.cmake` |
 | Missing TinyUSB / cyw43 / lwIP headers | SDK submodules: `git -C "$PICO_SDK_PATH" submodule update --init --recursive` |
-| Host Clang used, or wrong architecture | CLion profile not on the `Pico ARM` toolchain, or toolchain uses `cc`. Fix, then Tools > CMake > Reset Cache and Reload Project. `pico_compilers.cmake` is skipped when a compiler is already set |
+| Host Clang used, or wrong architecture | CLion profile not on the `Pico ARM` toolchain, or toolchain compiler fields set explicitly to `cc` (leave them as detected or point them to `arm-none-eabi-*`). Fix, then Tools > CMake > Reset Cache and Reload Project. `pico_compilers.cmake` is skipped when a compiler is passed explicitly |
 | `_exit` / `_sbrk` undefined during compiler checks | Cross-compiler not set before `project()`; for CLI builds, pass `-DARM_GCC_PATH=<toolchain prefix containing bin/>` |
 | `CMake Error: generator Ninja does not match` | Build directory created by another generator: delete `build/<board>` |
 | picotool download or build fails during configure | picotool missing and no network: `brew install picotool`. The `.elf` alone is enough for SWD |

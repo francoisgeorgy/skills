@@ -45,6 +45,12 @@ Paramètres reconnus : nom du projet (identifiant C), dossier parent (doit exist
 Créer un projet Pico 2 nommé test_blink2 dans ~/dev/sandbox, stdio sur UART.
 ```
 
+Ou explicitement :
+
+```
+/fgy-embedded:clion-pico2-setup Pico 2 W nommé weather_station dans ~/dev/projects, printf sur USB
+```
+
 Mêmes paramètres, avec la carte `pico2` ou `pico2_w` (défaut `pico2_w`). Le projet cible les cœurs Arm (`PICO_PLATFORM=rp2350-arm-s`). Prérequis spécifiques : Pico SDK >= 2.0.0, et un OpenOCD qui fournit `target/rp2350.cfg`, absent de la version 0.12.0 installée par défaut par Homebrew (voir ci-dessous).
 
 #### Exemple : `pico-env-check`
